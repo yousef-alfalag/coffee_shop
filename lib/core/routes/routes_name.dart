@@ -1,4 +1,5 @@
 class RoutesName {
-  static String splashView='splashView';
+  static String onboardingView='/onboardingView';
+  static String homeView='/homeView';
   
 }
