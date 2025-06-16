@@ -3,6 +3,7 @@ import 'package:coffee_shop/core/utils/app_assets.dart';
 import 'package:coffee_shop/core/utils/app_colors.dart';
 import 'package:coffee_shop/core/utils/app_style.dart';
 import 'package:coffee_shop/core/widgets/custom_icon_button.dart';
+import 'package:coffee_shop/features/detail%20_item/presentation/view/detail_item_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -12,7 +13,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(HomeControllerImp());
+    HomeControllerImp controller= Get.put(HomeControllerImp());
     return Scaffold(
       bottomNavigationBar: GetBuilder<HomeControllerImp>(
         builder: (controller) {
@@ -212,7 +213,7 @@ class HomeView extends StatelessWidget {
               child: GridView.builder(
                 // physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                itemCount: 10,
+                itemCount: controller.data.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.8,
@@ -220,63 +221,66 @@ class HomeView extends StatelessWidget {
                   mainAxisSpacing: 10,
                 ),
                 itemBuilder:
-                    (context, index) => Container(
-                      margin: EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 10,
-                      ),
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: AppColors.white,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Container(
-                            height: 120,
-                            width: 200,
-                            decoration: BoxDecoration(color: Colors.white),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                'assets/images/3.png',
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          Text(
-                            'Caffe Mocha',
-                            style: AppStyle.soraw600White.copyWith(
-                              fontSize: 17,
-                              color: AppColors.black,
-                            ),
-                          ),
-                          Text(
-                            'Deep Foam',
-                            style: AppStyle.soraw400Gray.copyWith(fontSize: 13),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                '\$10',
-                                style: AppStyle.soraw600White.copyWith(
-                                  fontSize: 17,
-                                  color: AppColors.black,
+                    (context, index) => GestureDetector(
+                      onTap: () => Get.to(DetailItemView(coffeeSelected: controller.data[index],)),
+                      child: Container(
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 10,
+                        ),
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: AppColors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Container(
+                              height: 120,
+                              width: 200,
+                              decoration: BoxDecoration(color: Colors.white),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.asset(
+                                  'assets/images/3.png',
+                                  fit: BoxFit.fill,
                                 ),
                               ),
-                              SizedBox(
-                                width: 40,
-                                height: 40,
-                                child: CustomIconButton(
-                                  icon: Icon(Icons.add, color: AppColors.white),
-                                ),
+                            ),
+                            Text(
+                              'Caffe Mocha',
+                              style: AppStyle.soraw600White.copyWith(
+                                fontSize: 17,
+                                color: AppColors.black,
                               ),
-                            ],
-                          ),
-                        ],
+                            ),
+                            Text(
+                              'Deep Foam',
+                              style: AppStyle.soraw400Gray.copyWith(fontSize: 13),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '\$10',
+                                  style: AppStyle.soraw600White.copyWith(
+                                    fontSize: 17,
+                                    color: AppColors.black,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 40,
+                                  height: 40,
+                                  child: CustomIconButton(
+                                    icon: Icon(Icons.add, color: AppColors.white),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
               ),
