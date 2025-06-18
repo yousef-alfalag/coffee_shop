@@ -27,8 +27,16 @@ class Assets {
   static const String imagesBanner1 = "assets/images/Banner1.png";
 
   /// Assets for imagesBike
-  /// assets/images/bike.svg
-  static const String imagesBike = "assets/images/bike.svg";
+  /// assets/images/bike.png
+  static const String imagesBike = "assets/images/bike.png";
+
+  /// Assets for imagesDiscounticon
+  /// assets/images/discounticon.png
+  static const String imagesDiscounticon = "assets/images/discounticon.png";
+
+  /// Assets for imagesEdit
+  /// assets/images/Edit.png
+  static const String imagesEdit = "assets/images/Edit.png";
 
   /// Assets for imagesHeart
   /// assets/images/heart.svg
@@ -42,29 +50,17 @@ class Assets {
   /// assets/images/Home1.svg
   static const String imagesHome1 = "assets/images/Home1.svg";
 
-  /// Assets for imagesIcon
-  /// assets/images/Icon.png
-  static const String imagesIcon = "assets/images/Icon.png";
-
   /// Assets for imagesIcon1
-  /// assets/images/Icon1.svg
-  static const String imagesIcon1 = "assets/images/Icon1.svg";
+  /// assets/images/icon1.png
+  static const String imagesIcon1 = "assets/images/icon1.png";
 
-  /// Assets for imagesMask
-  /// assets/images/Mask.svg
-  static const String imagesMask = "assets/images/Mask.svg";
+  /// Assets for imagesMilk
+  /// assets/images/milk.png
+  static const String imagesMilk = "assets/images/milk.png";
 
-  /// Assets for imagesMask1
-  /// assets/images/Mask1.svg
-  static const String imagesMask1 = "assets/images/Mask1.svg";
-
-  /// Assets for imagesMask2
-  /// assets/images/Mask2.svg
-  static const String imagesMask2 = "assets/images/Mask2.svg";
-
-  /// Assets for imagesMaskGroup
-  /// assets/images/MaskGroup.svg
-  static const String imagesMaskGroup = "assets/images/MaskGroup.svg";
+  /// Assets for imagesNote
+  /// assets/images/Note.png
+  static const String imagesNote = "assets/images/Note.png";
 
   /// Assets for imagesNotification
   /// assets/images/Notification.svg
@@ -73,5 +69,9 @@ class Assets {
   /// Assets for imagesOnboarding
   /// assets/images/onboarding.png
   static const String imagesOnboarding = "assets/images/onboarding.png";
+
+  /// Assets for imagesWallet
+  /// assets/images/Wallet.png
+  static const String imagesWallet = "assets/images/Wallet.png";
 }
 

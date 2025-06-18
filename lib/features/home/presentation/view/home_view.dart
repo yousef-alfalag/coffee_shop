@@ -110,9 +110,7 @@ class HomeView extends StatelessWidget {
                               ),
                               SizedBox(width: 20),
                               CustomIconButton(
-                                icon: SvgPicture.asset(
-                                  'assets/images/Icon1.svg',
-                                ),
+                                icon: Icon(Icons.add,color: AppColors.white,)
                               ),
                             ],
                           ),
