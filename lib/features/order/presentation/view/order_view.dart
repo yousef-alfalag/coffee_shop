@@ -1,4 +1,5 @@
 import 'package:coffee_shop/core/controllers/order_controller.dart';
+import 'package:coffee_shop/core/routes/routes_name.dart';
 import 'package:coffee_shop/core/utils/app_assets.dart';
 import 'package:coffee_shop/core/utils/app_colors.dart';
 import 'package:coffee_shop/core/utils/app_style.dart';
@@ -50,7 +51,7 @@ class DeliveryPickupTap extends GetView<OrderControllerImp> {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 24, vertical: 32),
       decoration: BoxDecoration(
-        color: AppColors.gray,
+        color: AppColors.lightGray,
         borderRadius: BorderRadius.circular(12),
       ),
       padding: EdgeInsets.all(4),
@@ -59,7 +60,6 @@ class DeliveryPickupTap extends GetView<OrderControllerImp> {
           Expanded(
             child: PrimaryButton(
               name: 'Deliver',
-
               color:
                   controller.isDeliverySelected == false
                       ? AppColors.lightGray
@@ -185,19 +185,19 @@ class CoffeeItem extends StatelessWidget {
               child: Image.asset(Assets.images2, fit: BoxFit.fill),
             ),
           ),
-          SizedBox(width: 16),
+          SizedBox(width: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Caffe Mocha'),
+                Text('Caffe Mocha',style: AppStyle.soraw600Black),
                 SizedBox(height: 4),
                 Text('Deep Foam'),
               ],
             ),
           ),
 
-          SizedBox(width: 16),
+          SizedBox(width: 10),
           Row(
             children: [
               IconButton(onPressed: () {}, icon: Icon(Icons.add)),
@@ -244,11 +244,7 @@ class DiscountSection extends StatelessWidget {
                     child: Image.asset(Assets.imagesDiscounticon),
                   ),
                   SizedBox(width: 16),
-                  Expanded(
-                    child: Text(
-                      '1 Discount is Applies',
-                    ),
-                  ),
+                  Expanded(child: Text('1 Discount is Applies',style: AppStyle.soraw600Black.copyWith(fontSize: 12))),
                   SizedBox(
                     height: 20,
                     width: 20,
@@ -274,46 +270,35 @@ class PaymentSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Payment Summary',
-          ),
+          Text('Payment Summary',style: AppStyle.soraw600Black),
           SizedBox(height: 16),
           Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [Text('Price'), Text('\$ 4.53')],
+              ),
+              SizedBox(height: 12),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Text('Delivery Fee'),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Price',
+                        '\$ 2.0',
+                        style: AppStyle.soraw400Gray.copyWith(
+                          decoration: TextDecoration.lineThrough,
+                        ),
                       ),
-                      Text(
-                        '\$ 4.53',
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 12),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Delivery Fee',
-                        
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            '\$ 2.0',style: AppStyle.soraw400Gray.copyWith(decoration: TextDecoration.lineThrough)),
-                          SizedBox(width: 8),
-                          Text(
-                            '\$ 1.0',
-                            style: AppStyle.soraw600Black
-                          ),
-                        ],
-                      ),
+                      SizedBox(width: 8),
+                      Text('\$ 1.0', style: AppStyle.soraw600Black),
                     ],
                   ),
                 ],
-              )
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -348,22 +333,15 @@ class BottomBarSection extends StatelessWidget {
                 SizedBox(width: 16),
                 Expanded(
                   child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            
-                                'Cash/Wallet',
-                          ),
-                          Text(
-                            '\$ 5.53',
-                          ),
-                        ],
-                      )),
-                
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [Text('Cash/Wallet',style: AppStyle.soraw600Black), Text('\$ 5.53')],
+                  ),
+                ),
+
                 SizedBox(
                   height: 20,
                   width: 20,
-                  child: Icon(Icons.keyboard_arrow_down_outlined,size: 35,),
+                  child: Icon(Icons.keyboard_arrow_down_outlined, size: 35),
                 ),
               ],
             ),
@@ -373,7 +351,9 @@ class BottomBarSection extends StatelessWidget {
             width: 500,
             child: PrimaryButton(
               name: 'Order',
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(RoutesName.deliveryView);
+              },
             ),
           ),
         ],

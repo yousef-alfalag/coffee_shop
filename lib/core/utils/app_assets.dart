@@ -30,6 +30,14 @@ class Assets {
   /// assets/images/bike.png
   static const String imagesBike = "assets/images/bike.png";
 
+  /// Assets for imagesBike2
+  /// assets/images/bike2.png
+  static const String imagesBike2 = "assets/images/bike2.png";
+
+  /// Assets for imagesDeliveryLocation 
+  /// assets/images/DeliveryLocation .png
+  static const String imagesDeliveryLocation  = "assets/images/DeliveryLocation .png";
+
   /// Assets for imagesDiscounticon
   /// assets/images/discounticon.png
   static const String imagesDiscounticon = "assets/images/discounticon.png";
@@ -37,6 +45,10 @@ class Assets {
   /// Assets for imagesEdit
   /// assets/images/Edit.png
   static const String imagesEdit = "assets/images/Edit.png";
+
+  /// Assets for imagesGps
+  /// assets/images/gps.svg
+  static const String imagesGps = "assets/images/gps.svg";
 
   /// Assets for imagesHeart
   /// assets/images/heart.svg
@@ -54,6 +66,10 @@ class Assets {
   /// assets/images/icon1.png
   static const String imagesIcon1 = "assets/images/icon1.png";
 
+  /// Assets for imagesMaps
+  /// assets/images/Maps.png
+  static const String imagesMaps = "assets/images/Maps.png";
+
   /// Assets for imagesMilk
   /// assets/images/milk.png
   static const String imagesMilk = "assets/images/milk.png";
@@ -69,6 +85,22 @@ class Assets {
   /// Assets for imagesOnboarding
   /// assets/images/onboarding.png
   static const String imagesOnboarding = "assets/images/onboarding.png";
+
+  /// Assets for imagesPhone
+  /// assets/images/phone.png
+  static const String imagesPhone = "assets/images/phone.png";
+
+  /// Assets for imagesProfile
+  /// assets/images/Profile.png
+  static const String imagesProfile = "assets/images/Profile.png";
+
+  /// Assets for imagesRute
+  /// assets/images/Rute.png
+  static const String imagesRute = "assets/images/Rute.png";
+
+  /// Assets for imagesRute1
+  /// assets/images/rute1.png
+  static const String imagesRute1 = "assets/images/rute1.png";
 
   /// Assets for imagesWallet
   /// assets/images/Wallet.png

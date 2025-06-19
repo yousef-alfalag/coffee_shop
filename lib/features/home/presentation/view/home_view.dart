@@ -4,6 +4,7 @@ import 'package:coffee_shop/core/utils/app_colors.dart';
 import 'package:coffee_shop/core/utils/app_style.dart';
 import 'package:coffee_shop/core/widgets/custom_icon_button.dart';
 import 'package:coffee_shop/features/detail%20_item/presentation/view/detail_item_view.dart';
+import 'package:coffee_shop/test_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -102,6 +103,8 @@ class HomeView extends StatelessWidget {
                                 ),
                                 child: TextField(
                                   decoration: InputDecoration(
+                                    hintText: 'Search coffee',
+                                    prefixIcon: Icon(Icons.search),
                                     border: OutlineInputBorder(
                                       borderSide: BorderSide.none,
                                     ),
@@ -110,6 +113,7 @@ class HomeView extends StatelessWidget {
                               ),
                               SizedBox(width: 20),
                               CustomIconButton(
+                                onPressed: () => Get.to(TestView(name: 'search view')),
                                 icon: Icon(Icons.add,color: AppColors.white,)
                               ),
                             ],
