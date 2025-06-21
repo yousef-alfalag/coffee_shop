@@ -16,42 +16,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     HomeControllerImp controller= Get.put(HomeControllerImp());
     return Scaffold(
-      bottomNavigationBar: GetBuilder<HomeControllerImp>(
-        builder: (controller) {
-          return BottomNavigationBar(
-            currentIndex: controller.selectedBottomNav,
-            onTap: (value) => controller.onBottomNavPressed(value),
-            selectedItemColor: AppColors.primaryColor,
-            items: [
-              BottomNavigationBarItem(
-                icon: SvgPicture.asset(Assets.imagesHome),
-                // activeIcon: SvgPicture.asset(
-                //   Assets.imagesHome,
-                //   colorFilter: ColorFilter.mode(
-                //     AppColors.primaryColor,
-                //     BlendMode.srcIn,
-                //   ),
-                // ),
-                activeIcon: SvgPicture.asset(Assets.imagesHome1),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: SvgPicture.asset(Assets.imagesHeart),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: SvgPicture.asset(Assets.imagesBag),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: SvgPicture.asset(Assets.imagesNotification),
-                label: '',
-              ),
-            ],
-          );
-        },
-      ),
-
+      bottomNavigationBar: CustomBottomNavBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -290,6 +255,51 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class CustomBottomNavBar extends StatelessWidget {
+  const CustomBottomNavBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<HomeControllerImp>(
+      builder: (controller) {
+        return BottomNavigationBar(
+          currentIndex: controller.selectedBottomNav,
+          onTap: (value) => controller.onBottomNavPressed(value),
+          selectedItemColor: AppColors.primaryColor,
+          items: [
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(Assets.imagesHome),
+              // activeIcon: SvgPicture.asset(
+              //   Assets.imagesHome,
+              //   colorFilter: ColorFilter.mode(
+              //     AppColors.primaryColor,
+              //     BlendMode.srcIn,
+              //   ),
+              // ),
+              activeIcon: SvgPicture.asset(Assets.imagesHome1),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(Assets.imagesHeart),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(Assets.imagesBag),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(Assets.imagesNotification),
+              label: '',
+            ),
+          ],
+        );
+      },
     );
   }
 }
